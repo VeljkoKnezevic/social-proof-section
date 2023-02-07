@@ -1,3 +1,8 @@
+$purple: #512051;
+$white: #ffffff;
+$verified: #ee69a4;
+$para: #927b91;
+
 html {
   box-sizing: border-box;
   font-size: 100%;
@@ -12,4 +17,209 @@ html {
 body {
   margin: 0;
   font-family: "League Spartan", sans-serif;
+
+  background-image: url(../images/bg-pattern-top-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top left;
+
+  &::after {
+    background-image: url(../images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+}
+
+.main {
+  padding: 82px 24px 99px;
+
+  &__heading {
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 2rem;
+    text-align: center;
+    letter-spacing: -1.42857px;
+    color: $purple;
+    margin: 0;
+  }
+
+  &__para {
+    font-weight: 500;
+    font-size: 1.188rem;
+    line-height: 1.563rem;
+    text-align: center;
+    letter-spacing: -0.633333px;
+    color: $para;
+    margin: 0;
+    margin-top: 17px;
+  }
+
+  &__stars__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 39px;
+    margin-bottom: 49px;
+  }
+  .stars {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f7f2f7;
+    border-radius: 8px;
+    padding: 13.5px;
+    gap: 15px;
+
+    &__text {
+      font-weight: 700;
+      font-size: 1.063rem;
+      line-height: 1rem;
+      color: $purple;
+    }
+  }
+
+  &__card {
+    background: $purple;
+    border-radius: 8px;
+    padding: 40px 32px 35px 32px;
+
+    &__info {
+      display: flex;
+      align-items: center;
+    }
+
+    .heading-and-verified {
+      margin-left: 23px;
+    }
+
+    &__image {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+
+    &__heading {
+      font-weight: 700;
+      font-size: 1.063rem;
+      line-height: 1rem;
+      color: $white;
+      margin: 0;
+    }
+
+    &__verified {
+      font-weight: 400;
+      font-size: 1.063;
+      line-height: 1rem;
+      color: $verified;
+    }
+
+    &__para {
+      font-weight: 500;
+      font-size: 1.063rem;
+      line-height: 1.375rem;
+      letter-spacing: -0.303571px;
+      color: $white;
+      margin: 0;
+      margin-top: 23px;
+    }
+  }
+
+  &__card + &__card {
+    margin-top: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    background-image: url(../images/bg-pattern-top-desktop.svg);
+
+    &::after {
+      background-image: url(../images/bg-pattern-bottom-desktop.svg);
+    }
+  }
+
+  .main {
+    padding: 118px 165px 100px;
+
+    .wrapper {
+      display: flex;
+    }
+
+    &__content {
+      width: 40%;
+    }
+
+    &__heading {
+      font-size: 3.5rem;
+      line-height: 3rem;
+      letter-spacing: -2px;
+      text-align: left;
+    }
+
+    &__para {
+      font-size: 1.188rem;
+      line-height: 1.563rem;
+      letter-spacing: -0.633333px;
+      text-align: left;
+    }
+
+    &__stars__wrapper {
+      width: 60%;
+    }
+
+    .stars {
+      flex-direction: row;
+      padding: 18px 32px;
+      gap: 0;
+
+      &__text {
+        margin-left: 32px;
+      }
+    }
+
+    .first {
+      margin-left: 125px;
+      width: 66.83%;
+    }
+
+    .second {
+      margin-left: 173px;
+      width: 66.83%;
+    }
+
+    .third {
+      margin-left: 220px;
+      width: 66.83%;
+    }
+
+    .card-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    &__card + &__card {
+      margin: 0;
+    }
+
+    &__card {
+      height: 234px;
+
+      &__para {
+        margin-top: 31px;
+      }
+    }
+
+    .first-card {
+      margin-top: 71px;
+    }
+
+    .second-card {
+      margin-top: 87px;
+    }
+
+    .third-card {
+      margin-top: 103px;
+    }
+  }
 }
